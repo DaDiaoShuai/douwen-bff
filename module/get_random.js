@@ -1,6 +1,8 @@
-module.exports = (data="") => {
+const { YIWEN } = require("../config/api");
+
+module.exports = () => {
 	return {
-		uri: "https://interface.meiriyiwen.com/article/random",
+		uri: `${YIWEN}/random`,
 		json: true
 	};
 };

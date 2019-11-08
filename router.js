@@ -7,6 +7,14 @@ const router = new Router();
 // 设置接口根path
 router.prefix("/dw");
 
+// router.all("*", ctx => {
+// 	ctx.status = 404;
+// 	ctx.body = {
+// 		msg: "找不到资源",
+// 		code: 404
+// 	};
+// });
+
 // 注册路由
 const files = readdirSync(join(__dirname, "module"));
 const regxFile = /\.js$/i;
@@ -20,23 +28,25 @@ files.forEach(file => {
 		let body = ctx.query;
 		if (_method === "post") {
 			body = ctx.request.body;
-        }
+		}
 		await request(_module(body))
 			.then(d => {
 				ctx.type = "application/json;charset=utf-8";
-				ctx.status = 200;
-				ctx.body = Object.assign(d, {
+                ctx.status = 200;
+                let data = typeof d === 'string' ? {data: d} : d
+				ctx.body = Object.assign(data, {
 					code: 0,
 					msg: "okay"
 				});
 			})
 			.catch(err => {
+				ctx.status = 500;
 				ctx.body = Object.assign(err, {
 					code: 500,
 					msg: "failed"
 				});
 			});
-		next();
+		// next();
 	});
 });
 

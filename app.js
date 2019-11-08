@@ -11,11 +11,6 @@ app.context.port = process.env.port || 9527;
 
 app.use(koaBody());
 
-// app.use((ctx, next) => {
-// 	next();
-// 	ctx.body = "资源死哪去了";
-// 	ctx.status = 404;
-// });
 
 app.use(router.routes()).use(
 	router.allowedMethods({
