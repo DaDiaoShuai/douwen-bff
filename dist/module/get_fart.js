@@ -1,0 +1,1 @@
+"use strict";var _require=require("../config/api"),RAINBOW_FART=_require.RAINBOW_FART;module.exports=function(){return{uri:RAINBOW_FART,json:!0}};

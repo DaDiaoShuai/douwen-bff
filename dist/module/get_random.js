@@ -1,0 +1,1 @@
+"use strict";var _require=require("../config/api"),YIWEN=_require.YIWEN;module.exports=function(){return{uri:"".concat(YIWEN,"/random"),json:!0}};

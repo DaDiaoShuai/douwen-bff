@@ -6,7 +6,7 @@ const Boom = require("@hapi/boom");
 
 const app = new Koa();
 
-app.context.host = process.env.host || "0.0.0.0";
+// app.context.host = process.env.host || "0.0.0.0";
 app.context.port = process.env.port || 9527;
 
 app.use(koaBody());
