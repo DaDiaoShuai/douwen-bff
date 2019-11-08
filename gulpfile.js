@@ -2,6 +2,7 @@ const gulp = require("gulp");
 const uglify = require("gulp-uglify");
 const { pipeline } = require("readable-stream");
 const babel = require("gulp-babel");
+const shell = require("shelljs");
 
 gulp.task("default", function() {
 	return pipeline(
@@ -14,3 +15,6 @@ gulp.task("default", function() {
 		gulp.dest("dist")
 	);
 });
+
+shell.mkdir("dist")
+shell.cp("./package.json", "./dist/");
