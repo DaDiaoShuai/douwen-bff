@@ -12,9 +12,10 @@ gulp.task("default", function() {
 			plugins: ["@babel/transform-runtime"]
 		}),
 		uglify(),
-		gulp.dest("dist")
+		gulp.dest("./dist")
 	);
 });
 
 shell.mkdir("dist")
 shell.cp("./package.json", "./dist/");
+shell.cp("./pm2.json", "./dist/");
