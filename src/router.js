@@ -7,14 +7,6 @@ const router = new Router();
 // 设置接口根path
 router.prefix("/dw");
 
-// router.all("*", ctx => {
-// 	ctx.status = 404;
-// 	ctx.body = {
-// 		msg: "找不到资源",
-// 		code: 404
-// 	};
-// });
-
 // 注册路由
 const files = readdirSync(join(__dirname, "module"));
 const regxFile = /\.js$/i;
