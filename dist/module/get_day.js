@@ -1,1 +1,0 @@
-"use strict";var _require=require("../config/api"),YIWEN=_require.YIWEN;module.exports=function(){var r=0<arguments.length&&void 0!==arguments[0]?arguments[0]:null;return{uri:"".concat(YIWEN,"/day"),json:!0,qs:r}};
