@@ -1,6 +1,6 @@
 {
     "name": "douwen-api",
-    "script": "app.js",
+    "script": "./app.js",
     "instances": "max",
     "exec_mode": "cluster"
 }
